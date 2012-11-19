@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Status:</b>
+  <%= @package_status.status %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @package_status.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_package_status_path(@package_status) %> |
+<%= link_to 'Back', package_statuses_path %>

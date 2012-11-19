@@ -1,0 +1,31 @@
+<h1>Listing installers</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Installer status</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @installers.each do |installer| %>
+  <tr>
+    <td><%= installer.user %></td>
+    <td><%= installer.name %></td>
+    <td><%= installer.phone %></td>
+    <td><%= installer.installer_status %></td>
+    <td><%= installer.notes %></td>
+    <td><%= link_to 'Show', installer %></td>
+    <td><%= link_to 'Edit', edit_installer_path(installer) %></td>
+    <td><%= link_to 'Destroy', installer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Installer', new_installer_path %>

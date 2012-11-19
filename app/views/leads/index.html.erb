@@ -1,0 +1,59 @@
+<h1>Listing leads</h1>
+
+<table>
+  <tr>
+    <th>Lead source</th>
+    <th>Lead status</th>
+    <th>Package</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone1</th>
+    <th>Phone2</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Notes</th>
+    <th>Partner</th>
+    <th>Agent</th>
+    <th>Installer</th>
+    <th>Lead step</th>
+    <th>Customer paid</th>
+    <th>Partner paid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @leads.each do |lead| %>
+  <tr>
+    <td><%= lead.lead_source %></td>
+    <td><%= lead.lead_status %></td>
+    <td><%= lead.package %></td>
+    <td><%= lead.name %></td>
+    <td><%= lead.email %></td>
+    <td><%= lead.phone1 %></td>
+    <td><%= lead.phone2 %></td>
+    <td><%= lead.address1 %></td>
+    <td><%= lead.address2 %></td>
+    <td><%= lead.city %></td>
+    <td><%= lead.state %></td>
+    <td><%= lead.zip %></td>
+    <td><%= lead.notes %></td>
+    <td><%= lead.partner %></td>
+    <td><%= lead.agent %></td>
+    <td><%= lead.installer %></td>
+    <td><%= lead.lead_step %></td>
+    <td><%= lead.customer_paid %></td>
+    <td><%= lead.partner_paid %></td>
+    <td><%= link_to 'Show', lead %></td>
+    <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
+    <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lead', new_lead_path %>

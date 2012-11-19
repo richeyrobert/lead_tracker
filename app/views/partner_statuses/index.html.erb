@@ -1,0 +1,25 @@
+<h1>Listing partner_statuses</h1>
+
+<table>
+  <tr>
+    <th>Status</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @partner_statuses.each do |partner_status| %>
+  <tr>
+    <td><%= partner_status.status %></td>
+    <td><%= partner_status.notes %></td>
+    <td><%= link_to 'Show', partner_status %></td>
+    <td><%= link_to 'Edit', edit_partner_status_path(partner_status) %></td>
+    <td><%= link_to 'Destroy', partner_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Partner status', new_partner_status_path %>

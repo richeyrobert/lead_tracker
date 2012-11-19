@@ -1,0 +1,31 @@
+<h1>Listing steps_logs</h1>
+
+<table>
+  <tr>
+    <th>Lead step</th>
+    <th>Date time</th>
+    <th>Lead</th>
+    <th>User</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @steps_logs.each do |steps_log| %>
+  <tr>
+    <td><%= steps_log.lead_step %></td>
+    <td><%= steps_log.date_time %></td>
+    <td><%= steps_log.lead %></td>
+    <td><%= steps_log.user %></td>
+    <td><%= steps_log.notes %></td>
+    <td><%= link_to 'Show', steps_log %></td>
+    <td><%= link_to 'Edit', edit_steps_log_path(steps_log) %></td>
+    <td><%= link_to 'Destroy', steps_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Steps log', new_steps_log_path %>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  partner: 
+  agent: 
+  installer: 
+  user: 
+  date: 2012-11-16
+  time: 2012-11-16 12:59:32
+  appointment_status: 
+  gcalendar: MyString
+  title: MyString
+  location: MyString
+  notes: MyText
+  completed: false
+
+two:
+  partner: 
+  agent: 
+  installer: 
+  user: 
+  date: 2012-11-16
+  time: 2012-11-16 12:59:32
+  appointment_status: 
+  gcalendar: MyString
+  title: MyString
+  location: MyString
+  notes: MyText
+  completed: false

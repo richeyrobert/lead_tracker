@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Source:</b>
+  <%= @lead_source.source %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @lead_source.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_lead_source_path(@lead_source) %> |
+<%= link_to 'Back', lead_sources_path %>

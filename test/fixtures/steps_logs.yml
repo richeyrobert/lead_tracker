@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  lead_step: 
+  date_time: 2012-11-16 12:47:44
+  lead: 
+  user: 
+  notes: MyText
+
+two:
+  lead_step: 
+  date_time: 2012-11-16 12:47:44
+  lead: 
+  user: 
+  notes: MyText

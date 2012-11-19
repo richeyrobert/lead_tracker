@@ -1,0 +1,25 @@
+<h1>Listing lead_steps</h1>
+
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lead_steps.each do |lead_step| %>
+  <tr>
+    <td><%= lead_step.step %></td>
+    <td><%= lead_step.notes %></td>
+    <td><%= link_to 'Show', lead_step %></td>
+    <td><%= link_to 'Edit', edit_lead_step_path(lead_step) %></td>
+    <td><%= link_to 'Destroy', lead_step, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lead step', new_lead_step_path %>

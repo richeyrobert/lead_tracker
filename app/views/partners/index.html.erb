@@ -1,0 +1,51 @@
+<h1>Listing partners</h1>
+
+<table>
+  <tr>
+    <th>Partner type</th>
+    <th>Partner status</th>
+    <th>Name</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Phone1</th>
+    <th>Phone2</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Website</th>
+    <th>Taxid</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @partners.each do |partner| %>
+  <tr>
+    <td><%= partner.partner_type %></td>
+    <td><%= partner.partner_status %></td>
+    <td><%= partner.name %></td>
+    <td><%= partner.contact %></td>
+    <td><%= partner.email %></td>
+    <td><%= partner.phone1 %></td>
+    <td><%= partner.phone2 %></td>
+    <td><%= partner.address1 %></td>
+    <td><%= partner.address2 %></td>
+    <td><%= partner.city %></td>
+    <td><%= partner.state %></td>
+    <td><%= partner.zip %></td>
+    <td><%= partner.website %></td>
+    <td><%= partner.taxid %></td>
+    <td><%= partner.notes %></td>
+    <td><%= link_to 'Show', partner %></td>
+    <td><%= link_to 'Edit', edit_partner_path(partner) %></td>
+    <td><%= link_to 'Destroy', partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Partner', new_partner_path %>

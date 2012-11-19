@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Status:</b>
+  <%= @agent_status.status %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @agent_status.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_agent_status_path(@agent_status) %> |
+<%= link_to 'Back', agent_statuses_path %>

@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  lead_source: 
+  lead_status: 
+  package: 
+  name: MyString
+  email: MyString
+  phone1: MyString
+  phone2: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  notes: MyText
+  partner: 
+  agent: 
+  installer: 
+  lead_step: 
+  customer_paid: false
+  partner_paid: false
+
+two:
+  lead_source: 
+  lead_status: 
+  package: 
+  name: MyString
+  email: MyString
+  phone1: MyString
+  phone2: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  notes: MyText
+  partner: 
+  agent: 
+  installer: 
+  lead_step: 
+  customer_paid: false
+  partner_paid: false

@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Partner:</b>
+  <%= @appointment.partner %>
+</p>
+
+<p>
+  <b>Agent:</b>
+  <%= @appointment.agent %>
+</p>
+
+<p>
+  <b>Installer:</b>
+  <%= @appointment.installer %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @appointment.user %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @appointment.date %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @appointment.time %>
+</p>
+
+<p>
+  <b>Appointment status:</b>
+  <%= @appointment.appointment_status %>
+</p>
+
+<p>
+  <b>Gcalendar:</b>
+  <%= @appointment.gcalendar %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @appointment.title %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @appointment.location %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @appointment.notes %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @appointment.completed %>
+</p>
+
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @partner_type.type %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @partner_type.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_partner_type_path(@partner_type) %> |
+<%= link_to 'Back', partner_types_path %>

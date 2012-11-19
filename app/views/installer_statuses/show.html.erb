@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Status:</b>
+  <%= @installer_status.status %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @installer_status.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_installer_status_path(@installer_status) %> |
+<%= link_to 'Back', installer_statuses_path %>

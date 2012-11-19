@@ -1,0 +1,37 @@
+<%= form_for(@steps_log) do |f| %>
+  <% if @steps_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@steps_log.errors.count, "error") %> prohibited this steps_log from being saved:</h2>
+
+      <ul>
+      <% @steps_log.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lead_step %><br />
+    <%= f.text_field :lead_step %>
+  </div>
+  <div class="field">
+    <%= f.label :date_time %><br />
+    <%= f.datetime_select :date_time %>
+  </div>
+  <div class="field">
+    <%= f.label :lead %><br />
+    <%= f.text_field :lead %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

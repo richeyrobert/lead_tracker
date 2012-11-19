@@ -1,0 +1,25 @@
+<h1>Listing contact_statuses</h1>
+
+<table>
+  <tr>
+    <th>Status</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contact_statuses.each do |contact_status| %>
+  <tr>
+    <td><%= contact_status.status %></td>
+    <td><%= contact_status.notes %></td>
+    <td><%= link_to 'Show', contact_status %></td>
+    <td><%= link_to 'Edit', edit_contact_status_path(contact_status) %></td>
+    <td><%= link_to 'Destroy', contact_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contact status', new_contact_status_path %>

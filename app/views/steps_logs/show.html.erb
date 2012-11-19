@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Lead step:</b>
+  <%= @steps_log.lead_step %>
+</p>
+
+<p>
+  <b>Date time:</b>
+  <%= @steps_log.date_time %>
+</p>
+
+<p>
+  <b>Lead:</b>
+  <%= @steps_log.lead %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @steps_log.user %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @steps_log.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_steps_log_path(@steps_log) %> |
+<%= link_to 'Back', steps_logs_path %>

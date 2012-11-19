@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  package_status: 
+  title: MyString
+  description: 
+  price: MyString
+  commission_partner: MyString
+  commission_agent: MyString
+
+two:
+  package_status: 
+  title: MyString
+  description: 
+  price: MyString
+  commission_partner: MyString
+  commission_agent: MyString

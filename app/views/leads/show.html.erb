@@ -1,0 +1,100 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Lead source:</b>
+  <%= @lead.lead_source %>
+</p>
+
+<p>
+  <b>Lead status:</b>
+  <%= @lead.lead_status %>
+</p>
+
+<p>
+  <b>Package:</b>
+  <%= @lead.package %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @lead.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @lead.email %>
+</p>
+
+<p>
+  <b>Phone1:</b>
+  <%= @lead.phone1 %>
+</p>
+
+<p>
+  <b>Phone2:</b>
+  <%= @lead.phone2 %>
+</p>
+
+<p>
+  <b>Address1:</b>
+  <%= @lead.address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%= @lead.address2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @lead.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @lead.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @lead.zip %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @lead.notes %>
+</p>
+
+<p>
+  <b>Partner:</b>
+  <%= @lead.partner %>
+</p>
+
+<p>
+  <b>Agent:</b>
+  <%= @lead.agent %>
+</p>
+
+<p>
+  <b>Installer:</b>
+  <%= @lead.installer %>
+</p>
+
+<p>
+  <b>Lead step:</b>
+  <%= @lead.lead_step %>
+</p>
+
+<p>
+  <b>Customer paid:</b>
+  <%= @lead.customer_paid %>
+</p>
+
+<p>
+  <b>Partner paid:</b>
+  <%= @lead.partner_paid %>
+</p>
+
+
+<%= link_to 'Edit', edit_lead_path(@lead) %> |
+<%= link_to 'Back', leads_path %>

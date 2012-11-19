@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Status:</b>
+  <%= @contact_status.status %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @contact_status.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_contact_status_path(@contact_status) %> |
+<%= link_to 'Back', contact_statuses_path %>

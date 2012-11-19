@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Step:</b>
+  <%= @lead_step.step %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @lead_step.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_lead_step_path(@lead_step) %> |
+<%= link_to 'Back', lead_steps_path %>

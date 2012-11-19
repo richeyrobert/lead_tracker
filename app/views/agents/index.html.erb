@@ -1,0 +1,47 @@
+<h1>Listing agents</h1>
+
+<table>
+  <tr>
+    <th>Agent type</th>
+    <th>Agent status</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone1</th>
+    <th>Phone2</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Notes</th>
+    <th>Partner</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @agents.each do |agent| %>
+  <tr>
+    <td><%= agent.agent_type %></td>
+    <td><%= agent.agent_status %></td>
+    <td><%= agent.name %></td>
+    <td><%= agent.email %></td>
+    <td><%= agent.phone1 %></td>
+    <td><%= agent.phone2 %></td>
+    <td><%= agent.address1 %></td>
+    <td><%= agent.address2 %></td>
+    <td><%= agent.city %></td>
+    <td><%= agent.state %></td>
+    <td><%= agent.zip %></td>
+    <td><%= agent.notes %></td>
+    <td><%= agent.partner %></td>
+    <td><%= link_to 'Show', agent %></td>
+    <td><%= link_to 'Edit', edit_agent_path(agent) %></td>
+    <td><%= link_to 'Destroy', agent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Agent', new_agent_path %>
