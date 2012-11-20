@@ -1,4 +1,11 @@
 LeadTracker::Application.routes.draw do
+
+  resource :session
+
+  match '/login' => "sessions#new", :as => "login"
+
+  match '/logout' => "sessions#destroy", :as => "logout"
+
   resources :packages
 
 

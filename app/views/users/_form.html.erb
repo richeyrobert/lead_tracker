@@ -20,16 +20,17 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :user_type %><br />
-    <%= f.text_field :user_type %>
+    <%#= f.label :user_type %><br />
+    <%# f.text_field :user_type %>
+    <%#= f.collection_select(:user_type, UserType.all, :user_type, :user_type, :prompt => "Select a User Type") %>
   </div>
   <div class="field">
-    <%= f.label :hashed_password %><br />
-    <%= f.text_field :hashed_password %>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :salt %><br />
-    <%= f.text_field :salt %>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
     <%= f.label :notes %><br />

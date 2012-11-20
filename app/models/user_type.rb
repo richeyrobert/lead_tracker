@@ -1,3 +1,3 @@
 class UserType < ActiveRecord::Base
-  attr_accessible :notes, :type
+  attr_accessible :notes, :user_type
 end

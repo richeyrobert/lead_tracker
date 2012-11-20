@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119172025) do
+ActiveRecord::Schema.define(:version => 20121119210142) do
 
   create_table "agent_statuses", :force => true do |t|
     t.string   "status"
@@ -248,7 +248,7 @@ ActiveRecord::Schema.define(:version => 20121119172025) do
   add_index "steps_logs", ["user_id"], :name => "index_steps_logs_on_user_id"
 
   create_table "user_types", :force => true do |t|
-    t.string   "type"
+    t.string   "user_type"
     t.text     "notes"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

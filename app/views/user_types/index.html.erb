@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Type</th>
+    <th>User Type</th>
     <th>Notes</th>
     <th></th>
     <th></th>
@@ -11,7 +11,7 @@
 
 <% @user_types.each do |user_type| %>
   <tr>
-    <td><%= user_type.type %></td>
+    <td><%= user_type.user_type %></td>
     <td><%= user_type.notes %></td>
     <td><%= link_to 'Show', user_type %></td>
     <td><%= link_to 'Edit', edit_user_type_path(user_type) %></td>
