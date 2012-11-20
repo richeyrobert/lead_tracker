@@ -2,7 +2,7 @@ require 'digest'
 class User < ActiveRecord::Base
   belongs_to :user_type
   attr_accessor :password
-  attr_accessible :email, :password_confirmation, :name, :notes, :password, :user_type
+  attr_accessible :email, :password_confirmation, :name, :notes, :password, :user_type_id
 
   validates :email, :uniqueness => true, 
   					:length => {:within => 5..50},

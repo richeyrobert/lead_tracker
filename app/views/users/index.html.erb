@@ -5,8 +5,6 @@
     <th>Name</th>
     <th>Email</th>
     <th>User type</th>
-    <th>Hashed password</th>
-    <th>Salt</th>
     <th>Notes</th>
     <th></th>
     <th></th>
@@ -18,8 +16,6 @@
     <td><%= user.name %></td>
     <td><%= user.email %></td>
     <td><%= user.user_type %></td>
-    <td><%= user.hashed_password %></td>
-    <td><%= user.salt %></td>
     <td><%= user.notes %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>

@@ -20,9 +20,9 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%#= f.label :user_type %><br />
+    <%= f.label :user_type %><br />
     <%# f.text_field :user_type %>
-    <%#= f.collection_select(:user_type, UserType.all, :user_type, :user_type, :prompt => "Select a User Type") %>
+    <%= f.collection_select(:user_type_id, UserType.all, :id, :user_type, :prompt => "Select a User Type") %>
   </div>
   <div class="field">
     <%= f.label :password %><br />
