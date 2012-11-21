@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Type</th>
+    <th>Partner type</th>
     <th>Notes</th>
     <th></th>
     <th></th>
@@ -11,7 +11,7 @@
 
 <% @partner_types.each do |partner_type| %>
   <tr>
-    <td><%= partner_type.type %></td>
+    <td><%= partner_type.partner_type %></td>
     <td><%= partner_type.notes %></td>
     <td><%= link_to 'Show', partner_type %></td>
     <td><%= link_to 'Edit', edit_partner_type_path(partner_type) %></td>

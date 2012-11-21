@@ -1,4 +1,5 @@
 class PartnersController < ApplicationController
+  before_filter :authenticate
   # GET /partners
   # GET /partners.json
   def index

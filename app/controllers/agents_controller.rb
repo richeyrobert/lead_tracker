@@ -1,4 +1,5 @@
 class AgentsController < ApplicationController
+  before_filter :authenticate
   # GET /agents
   # GET /agents.json
   def index

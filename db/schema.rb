@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120051750) do
+ActiveRecord::Schema.define(:version => 20121121002624) do
 
   create_table "agent_statuses", :force => true do |t|
     t.string   "status"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20121120051750) do
   end
 
   create_table "agent_types", :force => true do |t|
-    t.string   "type"
+    t.string   "agent_type"
     t.text     "notes"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -194,10 +194,10 @@ ActiveRecord::Schema.define(:version => 20121120051750) do
   end
 
   create_table "partner_types", :force => true do |t|
-    t.string   "type"
+    t.string   "partner_type"
     t.text     "notes"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "partners", :force => true do |t|

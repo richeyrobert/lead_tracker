@@ -13,11 +13,13 @@
 
   <div class="field">
     <%= f.label :partner_type %><br />
-    <%= f.text_field :partner_type %>
+    <%#= f.text_field :partner_type %>
+    <%= f.collection_select(:partner_type_id, PartnerType.all, :id, :partner_type, :prompt => "Select a Partner Type") %>
   </div>
   <div class="field">
     <%= f.label :partner_status %><br />
-    <%= f.text_field :partner_status %>
+    <%#= f.text_field :partner_status %>
+    <%= f.collection_select(:partner_status_id, PartnerStatus.all, :id, :status, :prompt => "Select a Partner Status") %>
   </div>
   <div class="field">
     <%= f.label :name %><br />

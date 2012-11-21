@@ -1,5 +1,8 @@
 LeadTracker::Application.routes.draw do
 
+  resources :partner_types
+
+
   resource :session
 
   match '/login' => "sessions#new", :as => "login"
@@ -64,9 +67,6 @@ LeadTracker::Application.routes.draw do
 
 
   resources :agent_types
-
-
-  resources :partner_types
 
 
   # The priority is based upon order of creation:

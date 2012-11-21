@@ -13,11 +13,13 @@
 
   <div class="field">
     <%= f.label :agent_type %><br />
-    <%= f.text_field :agent_type %>
+    <%#= f.text_field :agent_type %>
+    <%= f.collection_select(:agent_type_id, AgentType.all, :id, :agent_type, :prompt => "Select an Agent Type") %>
   </div>
   <div class="field">
     <%= f.label :agent_status %><br />
-    <%= f.text_field :agent_status %>
+    <%#= f.text_field :agent_status %>
+    <%= f.collection_select(:agent_status_id, AgentStatus.all, :id, :status, :prompt => "Select an Agent Status") %>
   </div>
   <div class="field">
     <%= f.label :name %><br />
@@ -61,7 +63,8 @@
   </div>
   <div class="field">
     <%= f.label :partner %><br />
-    <%= f.text_field :partner %>
+    <%#= f.text_field :partner %>
+    <%= f.collection_select(:partner_id, Partner.all, :id, :name, :prompt => "Select a Partner") %>
   </div>
   <div class="actions">
     <%= f.submit %>

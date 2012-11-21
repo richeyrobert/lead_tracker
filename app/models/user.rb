@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   						:presence => true, 
   						:if => :password_required?
 
-  #before_save :encrypt_new_password
+  before_save :encrypt_new_password
 
   def self.authenticate(email, password)
   	user = find_by_email(email)
