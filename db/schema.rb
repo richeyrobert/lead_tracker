@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121002624) do
+ActiveRecord::Schema.define(:version => 20121124053159) do
 
   create_table "agent_statuses", :force => true do |t|
     t.string   "status"
@@ -43,11 +43,13 @@ ActiveRecord::Schema.define(:version => 20121121002624) do
     t.integer  "partner_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
   end
 
   add_index "agents", ["agent_status_id"], :name => "index_agents_on_agent_status_id"
   add_index "agents", ["agent_type_id"], :name => "index_agents_on_agent_type_id"
   add_index "agents", ["partner_id"], :name => "index_agents_on_partner_id"
+  add_index "agents", ["user_id"], :name => "index_agents_on_user_id"
 
   create_table "appointment_statuses", :force => true do |t|
     t.string   "status"

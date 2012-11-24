@@ -21,6 +21,8 @@ LeadTracker::Application.routes.draw do
   resources :leads
 
 
+  match 'agents/start' => "agents#start"# , :as => "start"
+
   resources :agents
 
 

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 			uri = session[:original_uri]
 			session[:original_uri] = nil
 			#redirect_to(uri || {:action => "index"})
-			redirect_to :partners, :notice => "logged in successfully"
+			redirect_to :partners, flash[:notice] => "logged in successfully" #changed from :notice to flash[:notice]
 		else
 			flash.now[:alert] = "invaled login/password combination"
 			render :action => 'new'
@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		reset_session
-		redirect_to :login, :notice => "You successfully logged out"
+		redirect_to :login, flash[:notice] => "You successfully logged out" #changed from :notice to flash[:notice]
 	end
 end

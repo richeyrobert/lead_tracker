@@ -81,4 +81,8 @@ class AgentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def start
+    @agent = current_user.agent
+  end
 end

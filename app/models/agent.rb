@@ -2,5 +2,6 @@ class Agent < ActiveRecord::Base
   belongs_to :agent_type
   belongs_to :agent_status
   belongs_to :partner
-  attr_accessible :address1, :address2, :city, :email, :name, :notes, :phone1, :phone2, :state, :zip, :agent_type_id, :agent_status_id, :partner_id
+  has_one :user
+  attr_accessible :address1, :address2, :city, :email, :name, :notes, :phone1, :phone2, :state, :zip, :agent_type_id, :agent_status_id, :partner_id, :user_id
 end
