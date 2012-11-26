@@ -24,8 +24,8 @@
 
 <% @partners.each do |partner| %>
   <tr>
-    <td><%= partner.partner_type %></td>
-    <td><%= partner.partner_status %></td>
+    <td><%= partner.partner_type.partner_type %></td>
+    <td><%= partner.partner_status.status %></td>
     <td><%= partner.name %></td>
     <td><%= partner.contact %></td>
     <td><%= partner.email %></td>

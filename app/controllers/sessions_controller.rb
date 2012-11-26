@@ -6,7 +6,13 @@ class SessionsController < ApplicationController
 			uri = session[:original_uri]
 			session[:original_uri] = nil
 			#redirect_to(uri || {:action => "index"})
-			redirect_to :partners, flash[:notice] => "logged in successfully" #changed from :notice to flash[:notice]
+			if current_user.user_type.id == 1
+				redirect_to :users, flash[:notice] => "Super Administrator logged in successfully"
+			elsif current_user.user_type.id == 2
+				redirect_to :agents, flash[:notice] => "Partner Admin logged in successfully" #changed from :notice to flash[:notice]
+			else
+				redirect_to :leads, flash[:notice] => "logged in successfully" #changed from :notice to flash[:notice]
+			end
 		else
 			flash.now[:alert] = "invaled login/password combination"
 			render :action => 'new'

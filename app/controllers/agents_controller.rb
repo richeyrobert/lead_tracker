@@ -84,5 +84,6 @@ class AgentsController < ApplicationController
 
   def start
     @agent = current_user.agent
+    @new_lead = Lead.new
   end
 end

@@ -28,9 +28,9 @@
 
 <% @leads.each do |lead| %>
   <tr>
-    <td><%= lead.lead_source %></td>
-    <td><%= lead.lead_status %></td>
-    <td><%= lead.package %></td>
+    <td><%= lead.lead_source.source %></td>
+    <td><%= lead.lead_status.status %></td>
+    <td><%= lead.package.title %></td>
     <td><%= lead.name %></td>
     <td><%= lead.email %></td>
     <td><%= lead.phone1 %></td>
@@ -41,10 +41,10 @@
     <td><%= lead.state %></td>
     <td><%= lead.zip %></td>
     <td><%= lead.notes %></td>
-    <td><%= lead.partner %></td>
-    <td><%= lead.agent %></td>
+    <td><%= lead.partner.name %></td>
+    <td><%= lead.agent.name %></td>
     <td><%= lead.installer %></td>
-    <td><%= lead.lead_step %></td>
+    <td><%= lead.lead_step.step %></td>
     <td><%= lead.customer_paid %></td>
     <td><%= lead.partner_paid %></td>
     <td><%= link_to 'Show', lead %></td>

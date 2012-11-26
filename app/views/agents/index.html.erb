@@ -22,8 +22,8 @@
 
 <% @agents.each do |agent| %>
   <tr>
-    <td><%= agent.agent_type %></td>
-    <td><%= agent.agent_status %></td>
+    <td><%= agent.agent_type.agent_type %></td>
+    <td><%= agent.agent_status.status %></td>
     <td><%= agent.name %></td>
     <td><%= agent.email %></td>
     <td><%= agent.phone1 %></td>
@@ -34,7 +34,7 @@
     <td><%= agent.state %></td>
     <td><%= agent.zip %></td>
     <td><%= agent.notes %></td>
-    <td><%= agent.partner %></td>
+    <td><%= agent.partner.name %></td>
     <td><%= link_to 'Show', agent %></td>
     <td><%= link_to 'Edit', edit_agent_path(agent) %></td>
     <td><%= link_to 'Destroy', agent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
