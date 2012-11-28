@@ -1,5 +1,8 @@
 LeadTracker::Application.routes.draw do
 
+  resources :lead_notes
+
+
   get "schedule/add_appointment"
 
   get "schedule/get_appointments"
@@ -25,6 +28,7 @@ LeadTracker::Application.routes.draw do
   match 'leads/new_lead' => "leads#new_lead"
   match 'leads/my_lead_status' => "leads#my_lead_status"
   match 'leads/partner_lead_status' => "leads#partner_lead_status"
+  match 'leads/lead_admin' => "leads#lead_admin"
   resources :leads
 
 

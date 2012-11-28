@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127235415) do
+ActiveRecord::Schema.define(:version => 20121128214902) do
 
   create_table "agent_statuses", :force => true do |t|
     t.string   "status"
@@ -114,6 +114,19 @@ ActiveRecord::Schema.define(:version => 20121127235415) do
 
   add_index "installers", ["installer_status_id"], :name => "index_installers_on_installer_status_id"
   add_index "installers", ["user_id"], :name => "index_installers_on_user_id"
+
+  create_table "lead_notes", :force => true do |t|
+    t.integer  "lead_id"
+    t.integer  "user_id"
+    t.text     "notes"
+    t.integer  "lead_step_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "lead_notes", ["lead_id"], :name => "index_lead_notes_on_lead_id"
+  add_index "lead_notes", ["lead_step_id"], :name => "index_lead_notes_on_lead_step_id"
+  add_index "lead_notes", ["user_id"], :name => "index_lead_notes_on_user_id"
 
   create_table "lead_sources", :force => true do |t|
     t.string   "source"

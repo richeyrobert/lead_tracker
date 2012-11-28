@@ -6,6 +6,7 @@ class Lead < ActiveRecord::Base
   belongs_to :agent
   belongs_to :installer
   belongs_to :lead_step
+  has_many :lead_notes
   belongs_to :assigned_user, :class_name => 'User'
   attr_accessible :address1, :address2, :city, :customer_paid, :email, :name, :notes, :partner_paid, :phone1, :phone2, :state, :zip,
   	:lead_source_id, :package_id, :lead_status_id, :partner_id, :agent_id, :lead_step_id, :assigned_user_id
@@ -57,6 +58,12 @@ class Lead < ActiveRecord::Base
     else 
      LeadStep.find(0)
     end
-
   end
+  def make_lead_note
+    ln = LeadNote.new
+    ln.notes = "This was automatically created at #{Time.now}."
+    ln.save
+  end
+
+
 end

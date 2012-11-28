@@ -46,6 +46,9 @@ class LeadsController < ApplicationController
       if @lead.save
         #this is where I can send an email or a text on lead creation
         NewLeadMailer.new_lead_email(@lead).deliver
+        @lead.lead_notes.create(:id => @lead.id, 
+          :notes =>"This lead was automatically created at #{Time.now}.", 
+          :user_id => current_user.id, :lead_step_id => 1)
         format.html {redirect_to '/leads/my_lead_status', notice: 'Lead was successfully created.'}
         #format.html { redirect_to @lead, notice: 'Lead was successfully created.' }
         format.json { render json: @lead, status: :created, location: @lead }
@@ -99,5 +102,9 @@ class LeadsController < ApplicationController
 
   def partner_lead_status
     @my_leads = Lead.where(:partner_id => current_user.partner)
+  end
+
+  def lead_admin
+    @leads = Lead.all
   end
 end
