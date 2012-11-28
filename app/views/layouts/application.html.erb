@@ -7,7 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	<% unless current_user.blank? %>
+		<p>Current user :
+		<%= current_user.name %> 
+		<%= link_to "logout", :logout %></p>
+	<% end %>
+	<% if flash[:alert] %>
+    	<p class="flash-error"><%= flash[:alert] %></p>
+  	<% end %>
+  	<% if flash[:notice] %>
+    	<p class="flash-notice"><%= flash[:notice] %></p>
+  	<% end %>
 <%= yield %>
 
 </body>

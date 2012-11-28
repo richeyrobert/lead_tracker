@@ -2,6 +2,7 @@ require 'digest'
 class User < ActiveRecord::Base
   belongs_to :user_type
   has_one :agent
+  has_one :partner, :through => :agent
   attr_accessor :password
   attr_accessible :email, :password_confirmation, :name, :notes, :password, :user_type_id
 

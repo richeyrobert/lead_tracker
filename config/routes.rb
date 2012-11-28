@@ -18,6 +18,9 @@ LeadTracker::Application.routes.draw do
   resources :users
 
 
+  match 'leads/new_lead' => "leads#new_lead"
+  match 'leads/my_lead_status' => "leads#my_lead_status"
+  match 'leads/partner_lead_status' => "leads#partner_lead_status"
   resources :leads
 
 

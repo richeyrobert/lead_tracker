@@ -7,17 +7,11 @@
     <th>Package</th>
     <th>Name</th>
     <th>Email</th>
-    <th>Phone1</th>
-    <th>Phone2</th>
-    <th>Address1</th>
-    <th>Address2</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
+    <th>Phones</th>
+    <th>Address</th>
     <th>Notes</th>
     <th>Partner</th>
     <th>Agent</th>
-    <th>Installer</th>
     <th>Lead step</th>
     <th>Customer paid</th>
     <th>Partner paid</th>
@@ -33,18 +27,16 @@
     <td><%= lead.package.title %></td>
     <td><%= lead.name %></td>
     <td><%= lead.email %></td>
-    <td><%= lead.phone1 %></td>
-    <td><%= lead.phone2 %></td>
-    <td><%= lead.address1 %></td>
-    <td><%= lead.address2 %></td>
-    <td><%= lead.city %></td>
-    <td><%= lead.state %></td>
-    <td><%= lead.zip %></td>
+    <td><%= lead.all_phones %></td>
+    <td><%= lead.full_address %></td>
     <td><%= lead.notes %></td>
     <td><%= lead.partner.name %></td>
     <td><%= lead.agent.name %></td>
-    <td><%= lead.installer %></td>
-    <td><%= lead.lead_step.step %></td>
+    <% unless lead.lead_step.blank? %>
+        <td><%= lead.lead_step.step %></td>
+    <% else %>
+        <td>N/A</td>
+    <%  end %>
     <td><%= lead.customer_paid %></td>
     <td><%= lead.partner_paid %></td>
     <td><%= link_to 'Show', lead %></td>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121124053159) do
+ActiveRecord::Schema.define(:version => 20121127235415) do
 
   create_table "agent_statuses", :force => true do |t|
     t.string   "status"
@@ -152,16 +152,16 @@ ActiveRecord::Schema.define(:version => 20121124053159) do
     t.text     "notes"
     t.integer  "partner_id"
     t.integer  "agent_id"
-    t.integer  "installer_id"
+    t.integer  "assigned_user_id"
     t.integer  "lead_step_id"
     t.boolean  "customer_paid"
     t.boolean  "partner_paid"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "leads", ["agent_id"], :name => "index_leads_on_agent_id"
-  add_index "leads", ["installer_id"], :name => "index_leads_on_installer_id"
+  add_index "leads", ["assigned_user_id"], :name => "index_leads_on_installer_id"
   add_index "leads", ["lead_source_id"], :name => "index_leads_on_lead_source_id"
   add_index "leads", ["lead_status_id"], :name => "index_leads_on_lead_status_id"
   add_index "leads", ["lead_step_id"], :name => "index_leads_on_lead_step_id"

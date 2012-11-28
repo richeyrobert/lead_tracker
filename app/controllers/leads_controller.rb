@@ -44,6 +44,8 @@ class LeadsController < ApplicationController
 
     respond_to do |format|
       if @lead.save
+        #this is where I can send an email or a text on lead creation
+        NewLeadMailer.new_lead_email(@lead).deliver
         format.html { redirect_to @lead, notice: 'Lead was successfully created.' }
         format.json { render json: @lead, status: :created, location: @lead }
       else
@@ -79,5 +81,22 @@ class LeadsController < ApplicationController
       format.html { redirect_to leads_url }
       format.json { head :no_content }
     end
+  end
+  #My stuff begins here
+  def new_lead
+    @lead = Lead.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @lead }
+    end
+  end
+
+  def my_lead_status
+    @my_leads = Lead.where(:agent_id => current_user.agent)
+  end
+
+  def partner_lead_status
+    @my_leads = Lead.where(:partner_id => current_user.partner)
   end
 end

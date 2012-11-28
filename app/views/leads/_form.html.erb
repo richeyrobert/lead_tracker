@@ -14,17 +14,17 @@
   <div class="field">
     <%= f.label :lead_source %><br />
     <% f.text_field :lead_source %>
-    <%= f.collection_select(:lead_source, LeadSource.all, :id, :source, :prompt => "Select a Source") %>
+    <%= f.collection_select(:lead_source_id, LeadSource.all, :id, :source, :prompt => "Select a Source") %>
   </div>
   <div class="field">
     <%= f.label :lead_status %><br />
     <% f.text_field :lead_status %>
-    <%= f.collection_select(:lead_status, LeadStatus.all, :id, :status, :prompt => "Select a Status") %>
+    <%= f.collection_select(:lead_status_id, LeadStatus.all, :id, :status, :prompt => "Select a Status") %>
   </div>
   <div class="field">
     <%= f.label :package %><br />
     <% f.text_field :package %>
-    <%= f.collection_select(:package, Package.all, :id, :title, :prompt => "Select a Package") %>
+    <%= f.collection_select(:package_id, Package.all, :id, :title, :prompt => "Select a Package") %>
   </div>
   <div class="field">
     <%= f.label :name %><br />
@@ -69,22 +69,22 @@
   <div class="field">
     <%= f.label :partner %><br />
     <% f.text_field :partner %>
-    <%= f.collection_select(:partner, Partner.all, :id, :name, :prompt => "Select a Partner") %>
+    <%= f.collection_select(:partner_id, Partner.all, :id, :name, :prompt => "Select a Partner") %>
   </div>
   <div class="field">
     <%= f.label :agent %><br />
     <% f.text_field :agent %>
-    <%= f.collection_select(:agent, Agent.all, :id, :name, :prompt => "Select an Agent") %>
+    <%= f.collection_select(:agent_id, Agent.all, :id, :name, :prompt => "Select an Agent") %>
   </div>
   <div class="field">
     <%= f.label :installer %><br />
     <% f.text_field :installer %>
-    <%= f.collection_select(:installer, Installer.all, :id, :name, :prompt => "Select an Installer") %>
+    <%= f.collection_select(:installer_id, Installer.all, :id, :name, :prompt => "Select an Installer") %>
   </div>
   <div class="field">
     <%= f.label :lead_step %><br />
     <% f.text_field :lead_step %>
-    <%= f.collection_select(:lead_step, LeadStep.all, :id, :step, :prompt => "Select a Step") %>
+    <%= f.collection_select(:lead_step_id, LeadStep.all, :id, :step, :prompt => "Select a Step") %>
   </div>
   <div class="field">
     <%= f.label :customer_paid %><br />
