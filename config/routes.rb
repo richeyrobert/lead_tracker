@@ -1,5 +1,9 @@
 LeadTracker::Application.routes.draw do
 
+  get "schedule/add_appointment"
+
+  get "schedule/get_appointments"
+
   resources :partner_types
 
 

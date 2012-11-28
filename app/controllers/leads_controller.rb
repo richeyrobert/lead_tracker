@@ -46,7 +46,8 @@ class LeadsController < ApplicationController
       if @lead.save
         #this is where I can send an email or a text on lead creation
         NewLeadMailer.new_lead_email(@lead).deliver
-        format.html { redirect_to @lead, notice: 'Lead was successfully created.' }
+        format.html {redirect_to '/leads/my_lead_status', notice: 'Lead was successfully created.'}
+        #format.html { redirect_to @lead, notice: 'Lead was successfully created.' }
         format.json { render json: @lead, status: :created, location: @lead }
       else
         format.html { render action: "new" }

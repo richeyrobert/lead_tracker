@@ -6,12 +6,17 @@ class Lead < ActiveRecord::Base
   belongs_to :agent
   belongs_to :installer
   belongs_to :lead_step
+  belongs_to :assigned_user, :class_name => 'User'
   attr_accessible :address1, :address2, :city, :customer_paid, :email, :name, :notes, :partner_paid, :phone1, :phone2, :state, :zip,
-  	:lead_source_id, :package_id, :lead_status_id, :partner_id, :agent_id, :lead_step_id, :installer_id
+  	:lead_source_id, :package_id, :lead_status_id, :partner_id, :agent_id, :lead_step_id, :assigned_user_id
   accepts_nested_attributes_for :agent
 
   def full_address
-    "#{address1} \n#{city}, #{state} #{zip}"
+    if address1.blank?
+      " "
+    else
+      "#{address1} \n#{city}, #{state} #{zip}"
+    end
   end
 
   def all_phones
