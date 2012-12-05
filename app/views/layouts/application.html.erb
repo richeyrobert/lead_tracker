@@ -35,15 +35,22 @@
       </div>
       <div id="main">
         <%= yield %>
+        <div id ="bottom">
+          <%= yield :bottom %>
+        </div>
+
         <div id="footer">
           <div class="block">
             <p>Copyright &copy; <%= Time.now.year %> RocketNEXT IP Services.</p>
           </div>
         </div>
       </div>
+
+      <% unless params[:action] == 'index' %>
       <div id="sidebar">
         <%= yield :sidebar %>
       </div>
+      <% end %>
     </div>
   </div>
 

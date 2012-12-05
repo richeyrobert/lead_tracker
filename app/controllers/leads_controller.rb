@@ -1,4 +1,5 @@
 class LeadsController < ApplicationController
+  before_filter :authenticate
   # GET /leads
   # GET /leads.json
   def index
@@ -67,8 +68,13 @@ class LeadsController < ApplicationController
 
     respond_to do |format|
       if @lead.update_attributes(params[:lead])
+        @lead.lead_notes.create(:notes =>
+          "Lead information changed by user: #{current_user.name} at #{Time.now}.", 
+          :user_id => current_user.id, :lead_step_id => @lead.lead_step_id)
+        
         format.html { redirect_to @lead, notice: 'Lead was successfully updated.' }
         format.json { head :no_content }
+        format.js 
       else
         format.html { render action: "edit" }
         format.json { render json: @lead.errors, status: :unprocessable_entity }

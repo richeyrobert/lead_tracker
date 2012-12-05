@@ -65,5 +65,21 @@ class Lead < ActiveRecord::Base
     ln.save
   end
 
+  def get_progress
+    #this will get a percentage value of the progress this lead has gone through
+    this_step = lead_step.id
+    percent = "10"
+    case this_step
+      when 1..3 then percent = "20"
+      when 4..7 then percent = "40"
+      when 8..12 then percent = "60"
+      when 13..26 then percent = "80"
+      when 27 then percent = "100"
+      else percent = "0"
+        this_step
+    end
+    #return this_step
+
+  end
 
 end

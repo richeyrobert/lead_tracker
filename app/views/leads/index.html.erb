@@ -21,10 +21,14 @@
   </tr>
 
 <% @leads.each do |lead| %>
-  <tr>
+  <tr class="<%= cycle("odd", "even") %>">
     <td><%= lead.lead_source.source %></td>
     <td><%= lead.lead_status.status %></td>
-    <td><%= lead.package.title %></td>
+    <% unless lead.package.blank? %>
+        <td><%= lead.package.title %></td>
+    <% else %>
+        <td>N/A</td>
+    <% end %>
     <td><%= lead.name %></td>
     <td><%= lead.email %></td>
     <td><%= lead.all_phones %></td>

@@ -77,9 +77,9 @@
     <%= f.collection_select(:agent_id, Agent.all, :id, :name, :prompt => "Select an Agent") %>
   </div>
   <div class="field">
-    <%= f.label :installer %><br />
-    <% f.text_field :installer %>
-    <%= f.collection_select(:installer_id, Installer.all, :id, :name, :prompt => "Select an Installer") %>
+    <%#= f.label :installer %><br />
+    <%# f.text_field :installer %>
+    <%#= f.collection_select(:installer_id, Installer.all, :id, :name, :prompt => "Select an Installer") %>
   </div>
   <div class="field">
     <%= f.label :lead_step %><br />

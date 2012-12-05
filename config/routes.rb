@@ -1,5 +1,6 @@
 LeadTracker::Application.routes.draw do
 
+  get "lead_notes/get_notes"
   resources :lead_notes
 
 
