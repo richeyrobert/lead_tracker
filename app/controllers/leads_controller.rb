@@ -112,6 +112,37 @@ class LeadsController < ApplicationController
   end
 
   def lead_admin
-    @leads = Lead.all
+    #@groups = ["New", "Site Survey", "Install", "Schedule", "Billing", "Complete", "Archive", "Fail"]
+    #@groups = LeadStatus.all
+    @groups = LeadStatus.all.collect {|p| p.status }
+    if params[:group].blank?
+      @leads = Lead.all   
+    else
+      #figure out what the different queries are here
+      case params[:group]
+        when "New"
+          @leads = Lead.where("lead_status_id = ?", 1)
+        when "Site Survey"
+          @leads = Lead.where("lead_status_id = ?", 2)
+        when "Install"
+          @leads = Lead.where("lead_status_id = ?", 3)
+        when "Schedule"
+          @leads = Lead.where("lead_status_id = ?", 4)
+        when "Billing"
+          @leads = Lead.where("lead_status_id = ?", 5)
+        when "Complete"
+          @leads = Lead.where("lead_status_id = ?", 6)
+        when "Archive"
+          @leads = Lead.where("lead_status_id = ?", 7)
+        when "Fail"
+          @leads = Lead.where("lead_status_id = ?", 8)
+	when "All"
+	  @leads = Lead.all
+        else
+          @leads = Lead.all
+      end
+
+          
+    end
   end
 end

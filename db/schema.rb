@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128214902) do
+ActiveRecord::Schema.define(:version => 20121213042227) do
 
   create_table "agent_statuses", :force => true do |t|
     t.string   "status"
@@ -145,8 +145,9 @@ ActiveRecord::Schema.define(:version => 20121128214902) do
   create_table "lead_steps", :force => true do |t|
     t.string   "step"
     t.text     "notes"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "lead_status"
   end
 
   create_table "leads", :force => true do |t|

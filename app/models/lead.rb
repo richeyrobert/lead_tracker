@@ -12,6 +12,8 @@ class Lead < ActiveRecord::Base
   	:lead_source_id, :package_id, :lead_status_id, :partner_id, :agent_id, :lead_step_id, :assigned_user_id
   accepts_nested_attributes_for :agent
 
+  before_save :change_status
+
   def full_address
     if address1.blank?
       " "
@@ -79,6 +81,15 @@ class Lead < ActiveRecord::Base
         this_step
     end
     #return this_step
+
+  end
+
+  def change_status
+    #this will change the status of the lead before saving
+    unless lead_step.lead_status.blank?
+      puts "Lead step = #{lead_step.step}... Current lead status = #{lead_status.status}... New Lead Status = #{lead_step.lead_status}"
+      update_column(:lead_status_id, lead_step.lead_status)
+    end
 
   end
 
