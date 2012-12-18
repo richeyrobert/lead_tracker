@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 				redirect_to "/leads/my_lead_status", :notice => "logged in successfully" #changed from :notice to flash[:notice]
 			end
 		else
-			flash.now[:alert] = "invaled login/password combination"
+			flash.now[:error] = "invalid login/password combination"
 			render :action => 'new'
 		end
 	end

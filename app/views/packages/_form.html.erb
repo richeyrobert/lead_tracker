@@ -13,7 +13,9 @@
 
   <div class="field">
     <%= f.label :package_status %><br />
-    <%= f.text_field :package_status %>
+    <%#= f.text_field :package_status %>
+    <%#= f.collection_select(:lead_source_id, LeadSource.all, :id, :source, :prompt => "Select a Source") %>
+    <%= f.collection_select  :package_status_id, PackageStatus.all, :id, :status, :prompt => "Select a Status"  %>
   </div>
   <div class="field">
     <%= f.label :title %><br />
@@ -29,11 +31,13 @@
   </div>
   <div class="field">
     <%= f.label :commission_partner %><br />
-    <%= f.text_field :commission_partner %>
+    <%#= f.text_field :commission_partner %>
+    <%= f.collection_select  :commission_partner_id, Partner.all, :id, :name, :prompt => "Select a Partner"  %>
   </div>
   <div class="field">
     <%= f.label :commission_agent %><br />
-    <%= f.text_field :commission_agent %>
+    <%#= f.text_field :commission_agent %>
+    <%= f.collection_select  :commission_agent_id, Agent.all, :id, :name, :prompt => "Select an Agent"  %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -2,7 +2,9 @@
 
 <p>
   <b>Package status:</b>
-  <%= @package.package_status %>
+  <% unless @package.package_status.blank? %>
+    <%= @package.package_status.status %>
+  <% end %>
 </p>
 
 <p>
@@ -22,12 +24,16 @@
 
 <p>
   <b>Commission partner:</b>
-  <%= @package.commission_partner %>
+  <% unless @package.commission_partner.blank? %>
+    <%= @package.commission_partner.name %>
+  <% end %>
 </p>
 
 <p>
   <b>Commission agent:</b>
-  <%= @package.commission_agent %>
+  <% unless @package.commission_agent.blank? %>
+    <%= @package.commission_agent.name %>
+  <% end %>
 </p>
 
 

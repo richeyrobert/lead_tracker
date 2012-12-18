@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121213042227) do
+ActiveRecord::Schema.define(:version => 20121218004312) do
 
   create_table "agent_statuses", :force => true do |t|
     t.string   "status"
@@ -194,10 +194,10 @@ ActiveRecord::Schema.define(:version => 20121213042227) do
     t.string   "title"
     t.string   "description"
     t.string   "price"
-    t.string   "commission_partner"
-    t.string   "commission_agent"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.integer  "commission_partner_id", :limit => 255
+    t.integer  "commission_agent_id",   :limit => 255
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   add_index "packages", ["package_status_id"], :name => "index_packages_on_package_status_id"

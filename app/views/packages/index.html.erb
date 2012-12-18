@@ -15,12 +15,18 @@
 
 <% @packages.each do |package| %>
   <tr>
-    <td><%= package.package_status %></td>
+    <% unless package.package_status.blank? %>
+        <td><%= package.package_status.status %></td>
+    <% end %>
     <td><%= package.title %></td>
     <td><%= package.description %></td>
     <td><%= package.price %></td>
-    <td><%= package.commission_partner %></td>
-    <td><%= package.commission_agent %></td>
+    <% unless package.commission_partner.blank? %>
+        <td><%= package.commission_partner.name %></td>
+    <% end %>
+    <% unless package.commission_agent.blank? %>
+        <td><%= package.commission_agent.name %></td>
+    <% end %>
     <td><%= link_to 'Show', package %></td>
     <td><%= link_to 'Edit', edit_package_path(package) %></td>
     <td><%= link_to 'Destroy', package, method: :delete, data: { confirm: 'Are you sure?' } %></td>

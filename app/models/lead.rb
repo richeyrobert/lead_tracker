@@ -33,7 +33,7 @@ class Lead < ActiveRecord::Base
       next_step = LeadStep.where(:id => this_step)
       next_step.first
     else 
-      LeadStep.find(0)
+      LeadStep.find(1)
     end
   end
 
@@ -42,7 +42,7 @@ class Lead < ActiveRecord::Base
       current_step = LeadStep.where(:id => lead_step.id)
       current_step.first\
     else
-      LeadStep.find(0)
+      LeadStep.find(1)
     end
   end
 
@@ -53,12 +53,12 @@ class Lead < ActiveRecord::Base
       previous_step = LeadStep.where(:id => this_step)
       previous_step = previous_step.first
       if previous_step.blank?
-        LeadStep.find(0)
+        LeadStep.find(1)
       else 
         return previous_step
       end
     else 
-     LeadStep.find(0)
+     LeadStep.find(1)
     end
   end
   def make_lead_note
@@ -69,16 +69,22 @@ class Lead < ActiveRecord::Base
 
   def get_progress
     #this will get a percentage value of the progress this lead has gone through
-    this_step = lead_step.id
-    percent = "10"
-    case this_step
-      when 1..3 then percent = "20"
-      when 4..7 then percent = "40"
-      when 8..12 then percent = "60"
-      when 13..26 then percent = "80"
-      when 27 then percent = "100"
-      else percent = "0"
-        this_step
+    unless lead_step.blank?
+      this_step = lead_step.id
+      percent = "10"
+      case this_step
+        when 1..3 then percent = "20"
+        when 4..7 then percent = "40"
+        when 8..12 then percent = "60"
+        when 13..26 then percent = "80"
+        when 27 then percent = "100"
+        else percent = "1"
+          this_step
+      end
+    else 
+      lead_step_id = 1
+      #lead.save
+      #get_progress
     end
     #return this_step
 
@@ -86,9 +92,15 @@ class Lead < ActiveRecord::Base
 
   def change_status
     #this will change the status of the lead before saving
-    unless lead_step.lead_status.blank?
+    unless lead_step.blank?
       puts "Lead step = #{lead_step.step}... Current lead status = #{lead_status.status}... New Lead Status = #{lead_step.lead_status}"
-      update_column(:lead_status_id, lead_step.lead_status)
+      update_column(:lead_status_id, lead_step.lead_status.id)
+    else 
+      update_column(:lead_status_id, 1)
+    end
+    #now set the lead_step_id
+    if lead_step_id.blank?
+      update_column(:lead_step_id, 1)
     end
 
   end
